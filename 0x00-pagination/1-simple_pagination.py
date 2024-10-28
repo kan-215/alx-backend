@@ -7,7 +7,8 @@ from typing import List, Tuple
 
 
 class Server:
-    """ paginates a database of popular baby names.
+    """
+    paginates a database of popular baby names.
     """
     DATA_FILE = "Popular_Baby_Names.csv"
 
@@ -25,7 +26,8 @@ class Server:
 
     @staticmethod
     def index_range(page: int, page_size: int) -> Tuple[int, int]:
-        """finnds the  start and end index range
+        """
+        finds the  start and end index range
         """
         nextPageStartIndex = page * page_size
         return nextPageStartIndex - page_size, nextPageStartIndex

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-'''Parametrize templates
+'''Task 2: Get locale from request
 '''
 
 from flask import Flask, render_template, request
@@ -23,7 +23,7 @@ babel = Babel(app)
 
 @babel.localeselector
 def get_locale() -> str:
-    """gets the locale for a web page.
+    """Retrieves the locale for a web page.
 
     Returns:
         str: best match
@@ -33,12 +33,18 @@ def get_locale() -> str:
 
 @app.route('/')
 def index() -> str:
-    '''default app route
+    '''default route
 
     Returns:
         html: homepage
     '''
     return render_template("3-index.html")
+
+# uncomment this line and comment the @babel.localeselector
+# you get this error:
+# AttributeError: 'Babel' object has no attribute 'localeselector'
+# babel.init_app(app, locale_selector=get_locale)
+
 
 if __name__ == "__main__":
     app.run()

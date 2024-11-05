@@ -36,7 +36,7 @@ def index() -> str:
     '''default app route
 
     Returns:
-        html homepage
+        html: homepage
     '''
     return render_template("3-index.html")
 
